@@ -20,16 +20,6 @@ build-with-vendor: vendor build ## vendor dependencies and build
 run: ## run the project
 	go run -mod=vendor ./cmd/server/*.go
 
-debug: ## build and run the container in debug mode
-	docker build -t mermaid-mcp:debug .
-	docker run \
-		-e MERMAID_MCP_PG_CONN_STR=${MERMAID_MCP_PG_CONN_STR} \
-		--rm \
-		-it \
-		-p 6274:6274 \
-		-p 6277:6277 \
-		mermaid-mcp:debug
-
 DATABASE_URL ?= set-me
 
 up: vendor ## start docker containers
