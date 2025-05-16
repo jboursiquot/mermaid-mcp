@@ -1,7 +1,6 @@
 package erd_test
 
 import (
-	"strings"
 	"testing"
 
 	erd "github.com/jboursiquot/mermaid-mcp/tools/erd"
@@ -146,7 +145,7 @@ func TestGenerator_Generate(t *testing.T) {
 				assert.Contains(t, content, "erDiagram")
 
 				// Output should be mostly empty (no tables)
-				assert.True(t, !strings.Contains(content, "{"), "Expected no table definitions")
+				assert.True(t, assert.NotContains(t, content, "{"), "Expected no table definitions")
 			},
 		},
 	}
