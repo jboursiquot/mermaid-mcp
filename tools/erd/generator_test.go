@@ -145,7 +145,7 @@ func TestGenerator_Generate(t *testing.T) {
 				assert.Contains(t, content, "erDiagram")
 
 				// Output should be mostly empty (no tables)
-				assert.True(t, assert.NotContains(t, content, "{"), "Expected no table definitions")
+				assert.NotContains(t, content, "{")
 			},
 		},
 	}
